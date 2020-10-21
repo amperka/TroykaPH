@@ -64,19 +64,24 @@ void setup() {
 void loop() {
     if (Serial.available() && position <= 3) { 
         buffer[position++] = Serial.read();  // reading 4 bytes fom terminal
-        else (void) Serial.read(); // if more symbols - ignore 
-    }
+    } else (void) Serial.read(); // if more symbols - ignore 
     if (!Serial.available() && position == 4) {
         buffer[position] = 0;
         for (int i = 0; i < 4; i++) {
             multimeterValue = multimeterValue * 10 + (buffer[i] - '0');
         }
         adcValue = readVcc();
-        factor = (float)multimeterValue / (float)adcValue;
+        factor = (float)(multimeterValue) / (float)(adcValue);
+        Serial.println(multimeterValue);
+        Serial.println(buffer);
+        Serial.println(adcValue);
         Serial.print("Calibration factor is: ");
         Serial.println(factor);
         Serial.println("Save it, and use in '.begin(factor);' method.");
         Serial.println(
             "Recalibration is needed if you change Arduino board to another.");
+                delay(10000);
+    position = 0;
     }
+
 }

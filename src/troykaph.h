@@ -12,6 +12,8 @@
 #ifndef __TROYKA_PH_H__
 #define __TROYKA_PH_H__
 
+#include "Arduino.h"
+
 class TroykaPH {
 public:
     TroykaPH(uint8_t pin);

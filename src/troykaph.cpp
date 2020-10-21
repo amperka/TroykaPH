@@ -29,7 +29,7 @@ void TroykaPH::update(long periodMilliseconds = 1000) {
         delay(75);
         float value = analogRead(_pin) * 5.0 / 1024.;
 
-        _lastValue = value * (5000L / _readVcc()) * _correctionMultiplyer;
+        _lastValue = 3.5 * value * (5000L / _readVcc()) / _correctionMultiplyer;
     }
 }
 
