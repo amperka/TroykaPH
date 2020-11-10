@@ -33,7 +33,7 @@ void TroykaPH::update(long periodMilliseconds) {
     constexpr float phHalfRangeInVolts = 0.82;
 
     float value = 0;
-    if (_nextMeasureTime <= millis()) {
+    if (millis() - _nextMeasureTime > periodMilliseconds) {
         _nextMeasureTime += periodMilliseconds;
         // read value
         (void)analogRead(_pin);
