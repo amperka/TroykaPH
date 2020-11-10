@@ -4,7 +4,7 @@
 #include "Arduino.h"
 
 // Include library
-#include "troykaph.h"
+#include "TroykaPH.h"
 
 TroykaPH phMeter(A4); // set used analog pin
 
