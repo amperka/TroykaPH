@@ -2,7 +2,7 @@
 
 ## `class TroykaPH`
 
-Создайте объект типа `TroykaPH` для управления [модулем изменения pH жидкостей TroykaPH](https://amperka.ru/product/troyka-ph-sensor).
+Создайте объект типа `TroykaPH` для управления [модулем измерения pH жидкостей TroykaPH](https://amperka.ru/product/troyka-ph-sensor).
 
 ### `TroykaPH(uint8_t pin)`
 
