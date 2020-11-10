@@ -8,7 +8,7 @@
  * License: GPLv3, all text here must be included in any redistribution.
  */
 
-#include "troykaph.h"
+#include "TroykaPH.h"
 
 TroykaPH::TroykaPH(uint8_t pin) {
     _pin = pin;
