@@ -8,7 +8,7 @@
 
 TroykaPH phMeter(A4); // set used analog pin
 
-uint32_t showingTime;
+uint32_t lastShowingTime;
 constexpr uint32_t INTERVAL = 3000;
 
 void setup() {
@@ -16,16 +16,17 @@ void setup() {
     // phMeter.begin(correction,zeroShift); // if you have it (use calibrate.ino) for it
 
     Serial.begin(9600);
-    showingTime = millis() + INTERVAL; // show result once per 3 seconds
+    lastShowingTime = millis(); // show result once per 3 seconds
 }
 
 void loop() {
+    uint32_t currentTime = millis();
     phMeter.update(1000); // real read from sensor once per second
     // (you can increase this period, in practice pH value changing too slowly)
 
-    if (millis() - showingTime > INTERVAL) {
+    if (currentTime - lastShowingTime > INTERVAL) {
+        lastShowingTime = currentTime;
         Serial.print("\nCurrent pH: ");
         Serial.print(phMeter.read(), 1);
-        showingTime += INTERVAL;
     }
 }
