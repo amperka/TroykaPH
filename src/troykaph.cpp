@@ -1,7 +1,7 @@
 /*
  * This file is a part of TroykaPH library.
  *
- * Product page: https://amperka.ru/product/zelo-folow-line-sensor
+ * Product page: https://amperka.ru/product/troyka-ph-sensor
  * © Amperka LLC (https://amperka.com, dev@amperka.com)
  * 
  * Author: Yury Botov <by@amperka.com>
